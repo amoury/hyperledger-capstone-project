@@ -1,0 +1,137 @@
+/*
+ * Reliance Industries Asset Tracking network
+ */
+
+namespace org.reliance.network
+
+abstract participant Stakeholder {
+	o String email
+  o String address
+  o Double accountBalance
+}
+
+participant Exporter identified by exId extends Stakeholder {
+	o String exId
+}
+
+participant Shipper identified by shId extends Stakeholder {
+	o String shId
+}
+
+participant Importer identified by imId extends Stakeholder {
+	o String imId
+}
+
+
+// Lists
+
+enum AssetType {
+	o Medicine
+  o Fuel
+  o Trucks
+  o Wires
+  o Tables
+  o Laptops
+  o Chairs
+}
+
+enum ShipmentStatus {
+	o Created
+  o InTransit
+  o Arrived
+}
+
+enum CompassDirection {
+	o N
+  o S
+  o E
+  o W
+}
+
+
+// Assets
+asset Shipment identified by shipmentId {
+  o String shipmentId
+  o AssetType assetType
+  o ShipmentStatus shipmentStatus
+  o Long unitCount
+  --> Contract contract
+  o TemperatureReading[] temperatureReadings
+  o AccelarationReading[] accelarationReadings
+  o GPSReading[] gpsReadings
+}
+
+asset Contract identified by contractId {
+	o String contractId
+  --> Exporter exporter
+  --> Importer importer
+  --> Shipper shipper
+  o DateTime arrivalDate
+  o Double unitPrice
+  o Double minTemp
+  o Double maxTemp
+  o Double minPenaltyFactor
+  o Double maxPenaltyFactor
+  o Double maxAccelaration
+}
+
+// Events
+event TempThreshold {
+	o Double temp
+  o String message
+  o String lat
+  o String lng
+  o String readingTime
+  o Shipment shipment
+}
+
+event AccelThreshold {
+	o Double accelX
+  o Double accelY
+  o Double accelZ
+  o String message
+  o String lat
+  o String lng
+  o String readingTime
+  o Shipment shipment
+}
+
+event ShipmentInPort {
+	o String message
+  o Shipment shipment
+}
+
+
+// Tx
+abstract transaction ShipmentTx {
+  --> Shipment shipment
+}
+
+transaction AccelarationReading extends ShipmentTx {
+	o Double accelX
+  o Double accelY
+  o Double accelZ
+  o String lat
+  o String lng
+  o String readingTime optional
+}
+
+transaction TemperatureReading extends ShipmentTx {
+	o Double celcius
+  o String lat
+  o String lng
+  o DateTime readingTime optional
+}
+
+transaction GPSReading extends ShipmentTx {
+	o String lat
+  o CompassDirection latDir
+  o String lng
+  o CompassDirection lngDir
+  o String readingTime optional
+  o String readingDate optional
+}
+
+transaction ShipmentReceived {
+	--> Shipment shipment
+}
