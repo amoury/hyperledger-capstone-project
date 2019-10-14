@@ -44,7 +44,7 @@ _Result of AccelerationReading Transaction_
 _Initiating GPSReading with Importer's coordinates - this will trigger an event with message "Shipment in the arrival port"_
 <img width="1371" alt="Screen Shot 2019-10-14 at 5 46 06 PM" src="https://user-images.githubusercontent.com/16633104/66756240-a1ec9c00-eeaa-11e9-8bfc-3acbd104758a.png">
 
-_Emitted Event can be seen here (Need to be connected as an admin to see this)
+_Emitted Event can be seen here (Need to be connected as an admin to see this)_
 <img width="703" alt="Screen Shot 2019-10-14 at 5 49 33 PM" src="https://user-images.githubusercontent.com/16633104/66756431-0dcf0480-eeab-11e9-87b9-33153c936630.png">
 
 4. Now login as an **Importer** to instantiate `ShipmentReceived` transaction
