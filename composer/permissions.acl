@@ -1,126 +1,126 @@
 rule ParticipantAccessSystem {
-    description: "Grant all participants full access to system resources"
-    participant: "org.hyperledger.composer.system.Participant"
-    operation: ALL
-    resource: "org.hyperledger.composer.system.**"
-    action: ALLOW
+  description: "Grant all participants full access to system resources"
+  participant: "org.hyperledger.composer.system.Participant"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
 }
 
 rule ExporterAccessOwnContracts {
-	  description: "Exporters can see only their own contracts"
-  	participant(p): "org.reliance.network.Exporter"
-  	operation: READ
-    resource(r): "org.reliance.network.Contract"
-  	condition: (r.exporter.getIdentifier() === p.getIdentifier())
-  	action: ALLOW
+  description: "Exporters can see only their own contracts"
+  participant(p): "org.reliance.network.Exporter"
+  operation: READ
+  resource(r): "org.reliance.network.Contract"
+  condition: (r.exporter.getIdentifier() === p.getIdentifier())
+  action: ALLOW
 }
 
 rule ExporterAccessOwnShipments {
-	  description: "Exporters can see only their own shipments"
-  	participant(p): "org.reliance.network.Exporter"
-  	operation: READ
-    resource(r): "org.reliance.network.Shipment"
-  	condition: (r.contract.exporter.getIdentifier() === p.getIdentifier())
-  	action: ALLOW
+  description: "Exporters can see only their own shipments"
+  participant(p): "org.reliance.network.Exporter"
+  operation: READ
+  resource(r): "org.reliance.network.Shipment"
+  condition: (r.contract.exporter.getIdentifier() === p.getIdentifier())
+  action: ALLOW
 }
 
 rule ImporterAccessOwnContracts {
-	  description: "Importers can see only their own contracts"
-  	participant(p): "org.reliance.network.Importer"
-  	operation: READ
-    resource(r): "org.reliance.network.Contract"
-  	condition: (r.importer.getIdentifier() === p.getIdentifier())
-  	action: ALLOW
+  description: "Importers can see only their own contracts"
+  participant(p): "org.reliance.network.Importer"
+  operation: READ
+  resource(r): "org.reliance.network.Contract"
+  condition: (r.importer.getIdentifier() === p.getIdentifier())
+  action: ALLOW
 }
 
 rule ImporterAccessOwnShipments {
-	  description: "Importers can see only their own shipments"
-  	participant(p): "org.reliance.network.Importer"
-  	operation: READ
-    resource(r): "org.reliance.network.Shipment"
-  	condition: (r.contract.importer.getIdentifier() === p.getIdentifier())
-  	action: ALLOW
+  description: "Importers can see only their own shipments"
+  participant(p): "org.reliance.network.Importer"
+  operation: READ
+  resource(r): "org.reliance.network.Shipment"
+  condition: (r.contract.importer.getIdentifier() === p.getIdentifier())
+  action: ALLOW
 }
 
 rule ImporterToUpdateSystem {
-  	description: "Importer can see update the system through shipment Received Tx"
-  	participant: "org.reliance.network.Importer"
-  	operation: UPDATE
-    resource: "org.reliance.network.**"
-  	transaction: "org.reliance.network.ShipmentReceived"
-  	action: ALLOW
+  description: "Importer can see update the system through shipment Received Tx"
+  participant: "org.reliance.network.Importer"
+  operation: UPDATE
+  resource: "org.reliance.network.**"
+  transaction: "org.reliance.network.ShipmentReceived"
+  action: ALLOW
 }
 
 rule ImporterInitiateContract {
-	  description: "Importer can create / initiate a new contract"
-  	participant: "org.reliance.network.Importer"
-  	operation: CREATE
-    resource: "org.reliance.network.Contract"
-  	action: ALLOW
+  description: "Importer can create / initiate a new contract"
+  participant: "org.reliance.network.Importer"
+  operation: CREATE
+  resource: "org.reliance.network.Contract"
+  action: ALLOW
 }
 
 rule ShipperAccessOwnContracts {
-	  description: "Shippers can see only their own contracts"
-  	participant(p): "org.reliance.network.Shipper"
-  	operation: READ
-    resource(r): "org.reliance.network.Contract"
-  	condition: (r.shipper.getIdentifier() === p.getIdentifier())
-  	action: ALLOW
+  description: "Shippers can see only their own contracts"
+  participant(p): "org.reliance.network.Shipper"
+  operation: READ
+  resource(r): "org.reliance.network.Contract"
+  condition: (r.shipper.getIdentifier() === p.getIdentifier())
+  action: ALLOW
 }
 
 rule ShipperAccessOwnShipments {
-	  description: "Shippers can see only their own shipments"
-  	participant(p): "org.reliance.network.Shipper"
-  	operation: READ, UPDATE
-    resource(r): "org.reliance.network.Shipment"
-  	condition: (r.contract.shipper.getIdentifier() === p.getIdentifier())
-  	action: ALLOW
+  description: "Shippers can see only their own shipments"
+  participant(p): "org.reliance.network.Shipper"
+  operation: READ, UPDATE
+  resource(r): "org.reliance.network.Shipment"
+  condition: (r.contract.shipper.getIdentifier() === p.getIdentifier())
+  action: ALLOW
 }
 
 rule AnyParticipantCreateShipment {
-	  description: "Any participants can initiate the Shipment"
-  	participant: "org.reliance.network.Stakeholder"
-  	operation: CREATE
-    resource: "org.reliance.network.Shipment"
-  	action: ALLOW
+  description: "Any participants can initiate the Shipment"
+  participant: "org.reliance.network.Stakeholder"
+  operation: CREATE
+  resource: "org.reliance.network.Shipment"
+  action: ALLOW
 }
 
 rule CreateShipmentTx {
-    description: "Allow shippers to initiate any shipment transactions"
-    participant: "org.reliance.network.Shipper"
-    operation: CREATE
-    resource: "org.reliance.network.ShipmentTx"
-    action: ALLOW
+  description: "Allow shippers to initiate any shipment transactions"
+  participant: "org.reliance.network.Shipper"
+  operation: CREATE
+  resource: "org.reliance.network.ShipmentTx"
+  action: ALLOW
 }
 
 rule ShipmentReceivedTx {
-    description: "Allow importer to update once the Shipment is received"
-    participant: "org.reliance.network.Importer"
-    operation: CREATE
-    resource: "org.reliance.network.ShipmentReceived"
-    action: ALLOW
+  description: "Allow importer to update once the Shipment is received"
+  participant: "org.reliance.network.Importer"
+  operation: CREATE
+  resource: "org.reliance.network.ShipmentReceived"
+  action: ALLOW
 }
 
 rule ReadParticipants {
-  	description: "All participants can read other participants"
-  	participant: "org.reliance.network.*"
-  	operation: READ
-    resource: "org.reliance.network.Stakeholder"
-  	action: ALLOW
+  description: "All participants can read other participants"
+  participant: "org.reliance.network.*"
+  operation: READ
+  resource: "org.reliance.network.Stakeholder"
+  action: ALLOW
 }
 
 rule NetworkAdminUser {
-    description: "Grant business network administrators full access to user resources"
-    participant: "org.hyperledger.composer.system.NetworkAdmin"
-    operation: ALL
-    resource: "**"
-    action: ALLOW
+  description: "Grant business network administrators full access to user resources"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "**"
+  action: ALLOW
 }
 
 rule NetworkAdminSystem {
-    description: "Grant business network administrators full access to system resources"
-    participant: "org.hyperledger.composer.system.NetworkAdmin"
-    operation: ALL
-    resource: "org.hyperledger.composer.system.**"
-    action: ALLOW
+  description: "Grant business network administrators full access to system resources"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
 }

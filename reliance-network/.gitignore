@@ -12,7 +12,7 @@ node_modules
 
 # Ignore crypto-config folder
 crypto-config
-
+composer/ansar/
 # Ignore bin
 bin
 

@@ -25,10 +25,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.infrastructure.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.infrastructure.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/442d47492a1a36847f76cc8544a6168f9ff2bb4c4107385a748f785f672d8394_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ba6b7223b2d454faf43301c3b7f6c369aad9389f7b79aa470a1cb968251d0459_sk
     ports:
       - "7054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.infrastructure.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/442d47492a1a36847f76cc8544a6168f9ff2bb4c4107385a748f785f672d8394_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.infrastructure.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/ba6b7223b2d454faf43301c3b7f6c369aad9389f7b79aa470a1cb968251d0459_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/infrastructure.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.infrastructure.reliance-network.com
@@ -42,10 +42,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.power.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.power.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/9a4b187d6ddd2029aaec7baeaf1101d25197e5eee5c76152e86df71efe0c9427_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/361fc57b7dcbb8616ecb807854eb8461a50315221e4f0e175ab1aa026df3e81d_sk
     ports:
       - "8054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.power.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/9a4b187d6ddd2029aaec7baeaf1101d25197e5eee5c76152e86df71efe0c9427_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.power.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/361fc57b7dcbb8616ecb807854eb8461a50315221e4f0e175ab1aa026df3e81d_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/power.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.power.reliance-network.com
@@ -59,10 +59,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.communications.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.communications.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/61c0e75e53d1cd89de15e8c44133d4b818d2352561cc3b3be1826da9b531634d_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/93791106948842ce5a1bca7df0e7bea3ae9209df68e30a913e19db2b0a026f34_sk
     ports:
       - "9054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.communications.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/61c0e75e53d1cd89de15e8c44133d4b818d2352561cc3b3be1826da9b531634d_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.communications.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/93791106948842ce5a1bca7df0e7bea3ae9209df68e30a913e19db2b0a026f34_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/communications.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.communications.reliance-network.com
@@ -76,10 +76,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.entertainment.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.entertainment.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/10a9c3c1a901e4cfb483090eb87809d1b612803a616a6c8568fcbad0123ccefa_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/5dfbea9d529dbfa1da8cdd7d2abe84f393c0dd9059e26a12838d9867f61e2043_sk
     ports:
       - "10054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.entertainment.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/10a9c3c1a901e4cfb483090eb87809d1b612803a616a6c8568fcbad0123ccefa_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.entertainment.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/5dfbea9d529dbfa1da8cdd7d2abe84f393c0dd9059e26a12838d9867f61e2043_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/entertainment.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.entertainment.reliance-network.com
@@ -93,10 +93,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.capital.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.capital.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/e1bb06500f749a0cb00756abc4a50768023085c36624e40af6f1098aa0e213e2_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/c7d9188a82f3cf9318c2cc57b4b64af80486c58085b3def8cad26e5941e976f9_sk
     ports:
       - "11054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.capital.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/e1bb06500f749a0cb00756abc4a50768023085c36624e40af6f1098aa0e213e2_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.capital.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/c7d9188a82f3cf9318c2cc57b4b64af80486c58085b3def8cad26e5941e976f9_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/capital.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.capital.reliance-network.com
@@ -235,29 +235,3 @@ services:
       - peer1.capital.reliance-network.com
     networks:
       - byfn
-
-  # chaincode:
-  #   container_name: chaincode
-  #   image: hyperledger/fabric-ccenv:latest
-  #   tty: true
-  #   environment:
-  #     - GOPATH=/opt/gopath
-  #     - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-  #     - FABRIC_LOGGING_SPEC=INFO
-  #     - CORE_PEER_ID=chaincode
-  #     - CORE_PEER_ADDRESS=peer0.infrastructure.reliance-network.com:7051
-  #     - CORE_PEER_LOCALMSPID=InfrastructureMSP
-  #     - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/infrastructure.reliance-network.com/users/Admin@infrastructure.reliance-network.com/msp
-  #     - CORE_PEER_TLS_ENABLED=true
-  #     - CORE_TLS_CLIENT_KEY_PATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/infrastructure.reliance-network.com/users/Admin@infrastructure.reliance-network.com/tls/client.key
-  #     - CORE_TLS_CLIENT_CERT_PATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/infrastructure.reliance-network.com/users/Admin@infrastructure.reliance-network.com/tls/client.crt
-  #     - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/infrastructure.reliance-network.com/users/Admin@infrastructure.reliance-network.com/tls/ca.crt
-  #   working_dir: /opt/gopath/src/chaincode
-  #   command: /bin/bash -c 'sleep 6000000'
-  #   volumes:
-  #     - /var/run/:/host/var/run/
-  #     - ./msp:/etc/hyperledger/msp
-  #     - ./chaincode:/opt/gopath/src/chaincode
-  #   networks:
-  #     - byfn
-

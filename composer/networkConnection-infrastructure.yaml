@@ -8,7 +8,6 @@ name: "reliance-network_byfn"
 x-type: "hlfv1"
 description: "Reliance Network"
 version: "1.0"
-pwd: "/Users/ansarmemon/Documents/workspaces/hyperledger-capstone-submit/network"
 
 client:
   organization: Infrastructure
