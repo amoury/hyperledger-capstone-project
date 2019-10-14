@@ -20,5 +20,8 @@ That is all that is needed in terms of the setup.
 3. Once the whole network is successfully running, we need to install the composer chaincode on each of the peers. This will done easily by typing the command `./fabricNetwork.sh composer` and confirm to proceed.
 4. After this step is completed, just type the command `composer-playground`. This will spin up the composer playground on your `localhost:8080` and you should see the Admin cards and one of the participant cards.
 
+<img width="1680" alt="Screen Shot 2019-10-14 at 3 08 18 PM" src="https://user-images.githubusercontent.com/16633104/66747067-a8701900-ee94-11e9-8115-76c0fa28fdb0.png">
+
+
 
 ### 
