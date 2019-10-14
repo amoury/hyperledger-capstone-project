@@ -25,10 +25,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.infrastructure.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.infrastructure.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/597deac0d0bbf8a31fcb4fb3359ac97f79ff6d10c62b701dd53f2731d2a56577_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/442d47492a1a36847f76cc8544a6168f9ff2bb4c4107385a748f785f672d8394_sk
     ports:
       - "7054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.infrastructure.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/597deac0d0bbf8a31fcb4fb3359ac97f79ff6d10c62b701dd53f2731d2a56577_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.infrastructure.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/442d47492a1a36847f76cc8544a6168f9ff2bb4c4107385a748f785f672d8394_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/infrastructure.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.infrastructure.reliance-network.com
@@ -42,10 +42,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.power.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.power.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/86d2858b253b43c8a8f722aff71640ac510670ce66f72113a718ada3884ed110_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/9a4b187d6ddd2029aaec7baeaf1101d25197e5eee5c76152e86df71efe0c9427_sk
     ports:
       - "8054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.power.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/86d2858b253b43c8a8f722aff71640ac510670ce66f72113a718ada3884ed110_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.power.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/9a4b187d6ddd2029aaec7baeaf1101d25197e5eee5c76152e86df71efe0c9427_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/power.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.power.reliance-network.com
@@ -59,10 +59,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.communications.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.communications.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/cf0feb8d45afa27785f5696524dae85c2fd91395567ae336a02a47a34825600d_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/61c0e75e53d1cd89de15e8c44133d4b818d2352561cc3b3be1826da9b531634d_sk
     ports:
       - "9054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.communications.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/cf0feb8d45afa27785f5696524dae85c2fd91395567ae336a02a47a34825600d_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.communications.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/61c0e75e53d1cd89de15e8c44133d4b818d2352561cc3b3be1826da9b531634d_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/communications.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.communications.reliance-network.com
@@ -76,10 +76,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.entertainment.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.entertainment.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/5cdf6a7c7fc5ce96988cc1d45134a944eb13a1228cd324f65bdca37152a9b040_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/10a9c3c1a901e4cfb483090eb87809d1b612803a616a6c8568fcbad0123ccefa_sk
     ports:
       - "10054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.entertainment.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/5cdf6a7c7fc5ce96988cc1d45134a944eb13a1228cd324f65bdca37152a9b040_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.entertainment.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/10a9c3c1a901e4cfb483090eb87809d1b612803a616a6c8568fcbad0123ccefa_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/entertainment.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.entertainment.reliance-network.com
@@ -93,10 +93,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca.capital.reliance-network.com
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.capital.reliance-network.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/c3fc490201ab19b9e230c92a9da27cb5eba5742fc4da7dfeeac1139968a14169_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/e1bb06500f749a0cb00756abc4a50768023085c36624e40af6f1098aa0e213e2_sk
     ports:
       - "11054:7054"
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.capital.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/c3fc490201ab19b9e230c92a9da27cb5eba5742fc4da7dfeeac1139968a14169_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.capital.reliance-network.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/e1bb06500f749a0cb00756abc4a50768023085c36624e40af6f1098aa0e213e2_sk -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/capital.reliance-network.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.capital.reliance-network.com

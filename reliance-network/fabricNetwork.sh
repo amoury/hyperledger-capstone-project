@@ -201,7 +201,6 @@ function setupComposer() {
   CARDOUTPUT=PeerAdmin@reliance-network-infrastructure.card
 
   # Create a new business network card for the administrator to use to deploy the composer business network to fabric network
-  # TODO: Repeat this step for all organizations
   composer card create -p "$CONNECTION_PROFILE" -u PeerAdmin -c "$CERT" -k "$PRIVATE_KEY" -r PeerAdmin -r ChannelAdmin -f "$CARDOUTPUT"
 
   # Check if a card with the same name has previously been imported? If yes, remove it before importing a new one.
@@ -210,13 +209,11 @@ function setupComposer() {
   fi
 
   # Import the business network card for Infrastructure into the wallet
-  # TODO: Repeat this step for all organizations
   composer card import -f PeerAdmin@reliance-network-infrastructure.card --card PeerAdmin@reliance-network-infrastructure
   composer card list
   echo "Hyperledger Composer PeerAdmin@reliance-network-infrastructure card has been imported"
 
   # Remove the card file from filesystem after card has been imported to wallet
-  # TODO: Repeat this step for all organizations
   rm PeerAdmin@reliance-network-infrastructure.card
 
   # Create a composer business network archive (bna) based on the model and script file
@@ -225,15 +222,12 @@ function setupComposer() {
   composer archive create -t dir -n . -a dist/reliance-network.bna
 
   # Install the composer business network on fabric peer nodes for Infrastructure
-  # TODO: Repeat this step to install composer BBN on peers of all organizations
   composer network install --card PeerAdmin@reliance-network-infrastructure --archiveFile ./dist/reliance-network.bna
 
   # Retrieve certificates for a user [Ansar] to use as the business network administrator for Infrastructure
-  # TODO: Retrieve certificates for administrators of all organizations
   composer identity request -c PeerAdmin@reliance-network-infrastructure -u admin -s adminpw -d ansar
 
   # Start the business network with user [Ansar] from Infrastructure as the administrator allowing him to add new participants from their orgs.
-  # TODO: Add the administrators from other orgs to this command
   composer network start -c PeerAdmin@reliance-network-infrastructure -n reliance-network -V 0.0.1 -o endorsementPolicyFile=./endorsement-policy.json -A ansar -C ansar/admin-pub.pem
 
   # Create a business network card that Ansar can use to access the business network on behalf of Infrastructure
@@ -251,11 +245,9 @@ function setupComposer() {
   composer network ping -c ansar@reliance-network
 
   # Add a new participant (Infrastructure Pay) as a Manufacturer to the business network
-  # @TODO: Change the below line
   composer participant add -c ansar@reliance-network -d '{"$class":"org.reliance.network.Importer","imId":"0001", "email":"importer001@xyz.com", "address": "19.0330N, 73.0297E", "accountBalance": 10000}'
 
   # Issue a new identity for the Infrastructure Pay manufacturer
-  # @TODO: Change the below line
   composer identity issue -c ansar@reliance-network -f importer.card -u importer -a "resource:org.reliance.network.Importer#0001"
 
   # Import the card for new Infrastructure Pay user into wallet
